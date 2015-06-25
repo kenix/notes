@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-04-29T11:56:32+02:00
+
+====== shell ======
+Created Wednesday 29 April 2015
+
+# redirect sout, serr to null
+>/dev/null 2>&1
+# redirect sout, serr to log file
+>myapp.log 2>&1
+# close sout, serr
+1>&- 2>&-
+
+#netstat command to find open ports
+netstat --listen
+
+#To display open ports and established TCP connections, enter:
+netstat -vatn
+
+#To display only open UDP ports try the following command:
+netstat -vaun
+
+#If you want to see FQDN (full dns hostname), try removing the -n flag:
+netstat -vat
+
+#To display the list of open ports, enter:
+lsof -i
+
+#To display all open files, use:
+lsof
+
+#To display all open IPv4 network files in use by the process whose PID is 9255, use:
+lsof -i 4 -a -p 9255

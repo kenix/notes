@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-04-29T11:55:24+02:00
+
+====== docker ======
+Created Wednesday 29 April 2015
+
+docker build -t kenix/comm_tcp:v0.0.1 .
+docker run --publish 6789:6789 --name tcpcomm --rm -it -v ~/prod/var/log:/root/prod/var/log kenix/comm_tcp:v0.0.1
+
+# backup
+docker run --rm --volume-from mongodata -v $(pwd):/backup busybox tar cvf /backup/backup.tar /data/db
+# restore
+docker run --rm --volumes-from mongodata -v $(pwd):/backup busybox tar xvf /backup/backup.tar
+# list contents
+docker run --rm --volumes-from mongodata busybox ls -lh /data/db
+# copy existing folder from host to docker volume container
+docker run -v /test/data --name testdata busybox true
+tar -c sample/ | docker run -i --rm -w /test/data --volumes-from testdata busybox tar -xv
+
+-------------------------------------
+docker create -v /var/lib/mysql busybox true
+docker run --rm --volumes-from mysql -v /export/home/zzhao/docker/backup:/backup busybox tar -cvf /backup/mysql.tar
+
+docker create -v /var/lib/mysql --name dat_dmt busybox true
+docker run -d --name mysql_dmt --volumes-from dat_dmt -p 13306:3306 -e MYSQL_ROOT_PASSWORD=dba mysql:5 mysqld --default-storage-engine=InnoDB --lower_case_table_names=1
+-------------------------------------
+sudo docker rm -f mysql
+sudo docker run -d --name mysql --volumes-from dat_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=dba mysql:5 mysqld --default-storage-engine=InnoDB --lower_case_table_names=1 --sql-mode=""
+
+docker ps -a | grep vwdkl | cut -d' ' -f1 | xargs sudo docker rm
+
+# attach to a running container
+docker exec -it [container-id or name] bash
+
+docker run --name website -p 9000:80 -p 9430:430 -v /export/home/zzhao/web/server/htdocs:/usr/share/nginx/html -d nginx

@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-05-28T09:00:54+02:00
+
+====== jpa ======
+Created Thursday 28 May 2015
+
+hibernate id generator 'select' with database trigger requires a key to select the id after insert:
+id generator: 'select', params: [key: 'name']
+
+the 'name' assigned by programm must be unique for this to work
+
+As well as in the case with list, new table named product_parameters will be created in the database with the following columns:
+
+parameters - stores product id
+parameters_idx - map key
+parameters_elt - map value
+
+class Author {
+   Map bookTitlesByIsbn = [:]// map of ISBN:book names
+}
+
+Given an ISBN and a book title fragment, you could query the Author domain class like the following:
+String isbn = params.isbn, partialTitle = params.title
+Author.executeQuery("from Author a where a.books['${isbn}'] like '%${partialTitle}%'")

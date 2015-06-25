@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-04-29T11:57:48+02:00
+
+====== misc ======
+Created Wednesday 29 April 2015
+
+0d60f635850a91dedbdf45442301a64d
+
+10.28.5.127
+192.168.99.100
+
+fixed.key=2c29-5d42-3fe4-804a
+<key>2c29-5d42-3fe4-804a</key>
+
+./pushcli -conn=1000 -service=nemesis:15151
+
+in merger folder
+protoc --java_out=src/main/java --proto_path=$PROTOBUF_HOME/src --proto_path=src/conf src/conf/provider.proto
+
+$ git checkout -b feature_branch_name
+... edit files, add and commit ...
+$ git push -u origin feature_branch_name

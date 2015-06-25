@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-06-18T08:20:19+02:00
+
+====== idoc ======
+Created Thursday 18 June 2015
+
+max venor erstegroup(12)
+max client erstegroup(360)
+
+insert into clients values ('docman-erstegroup', 390, 120, 1, 'EXCLUSIVE', 'vwd-ent:ByLogin', null, null, 9999, 'vwd document manager [PIB] - Portal', null, '', 206);
+
+sync-docman-xml-repository-to-tomcat.sh .IDOC265
+
+2015-06-18_Schema_99c2087__53e7737_addClientSectionTextTable

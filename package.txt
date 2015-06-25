@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-06-16T15:13:43+02:00
+
+====== package ======
+Created Tuesday 16 June 2015
+
+yum search xxx
+yum info xxx
+sudo yum install xxx
+sudo yum update
+sudo yum remove xxx
+
+yum list xxx
+yum list | less
+
+
+sudo rpm -ivh xxx
+rpm -qa | grep -i xxx
+sudo rpm -e xxx-1.2.3-1.i386
