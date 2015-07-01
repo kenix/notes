@@ -21,3 +21,5 @@ protoc --java_out=src/main/java --proto_path=$PROTOBUF_HOME/src --proto_path=src
 $ git checkout -b feature_branch_name
 ... edit files, add and commit ...
 $ git push -u origin feature_branch_name
+
+xdg-mime default wfica.desktop application/x-ica
