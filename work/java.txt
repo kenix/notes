@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-07-02T16:37:34+02:00
+
+====== java ======
+Created Thursday 02 July 2015
+
+java -jar jol-cli/target/jol-cli.jar internals java.util.HashMap
+java -jar jol-cli/target/jol-cli.jar externals java.util.PriorityQueue
+java -jar jol-cli/target/jol-cli.jar footprint java.util.Hashtable
+java -jar jol-cli/target/jol-cli.jar estimates java.math.BigInteger
+java -jar jol-cli/target/jol-cli.jar heapdump heapdump.hprof
+

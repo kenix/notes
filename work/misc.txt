@@ -23,3 +23,5 @@ $ git checkout -b feature_branch_name
 $ git push -u origin feature_branch_name
 
 xdg-mime default wfica.desktop application/x-ica
+
+CTRL+ALT+F7 -> CTRL+ALT+F1
