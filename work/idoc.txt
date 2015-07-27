@@ -13,3 +13,5 @@ insert into clients values ('docman-erstegroup', 390, 120, 1, 'EXCLUSIVE', 'vwd-
 sync-docman-xml-repository-to-tomcat.sh .IDOC265
 
 2015-06-18_Schema_99c2087__53e7737_addClientSectionTextTable
+
+#log=true
