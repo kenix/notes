@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-11-20T14:55:56+01:00
+
+====== performance ======
+Created Friday 20 November 2015
+
+Amdahl's law:
+We are given a serial task which is split into four consecutive parts, whose percentages of execution time are p1 = 11%, p2 = 18%, p3 = 23%, and p4 = 48% respectively. Then we are told that the 1st part is not sped up, so s1 = 1, while the 2nd part is sped up 5 times, so s2 = 5, the 3rd part is sped up 20 times, so s3 = 20, and the 4th part is sped up 1.6 times, so s4 = 1.6. By using Amdahl's law, the overall speedup is
+
+S_\text{latency} = \frac{1}{\frac{p1}{s1} + \frac{p2}{s2} + \frac{p3}{s3} + \frac{p4}{s4}} = \frac{1}{\frac{0.11}{1} + \frac{0.18}{5} + \frac{0.23}{20} + \frac{0.48}{1.6}} = 2.19.
+Notice how the 20 times and 5 times speedup on the 2nd and 3rd parts respectively don't have much effect on the overall speedup when the 4th part (48% of the execution time) is sped up only 1.6 times.

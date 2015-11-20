@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-11-17T10:12:38+01:00
+
+====== servlet ======
+Created Tuesday 17 November 2015
+
+String restOfTheUrl = (String) request.getAttribute(
+		HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
+
+handle ZoneHandlerMapping: overwrite createRequestMappingHandlerMapping in [[WebMvcConfigurationSupport]]
+
+use [[InitBinder]] to polulate command/form object

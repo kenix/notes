@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-09-25T15:48:55+02:00
+
+====== jax-rs ======
+Created Friday 25 September 2015
+
+When deploying a JAX-RS application using servlet then ServletConfig, ServletContext, HttpServletRequest and HttpServletResponse are available using @Context.
+
+[[MessageBodyReader]]
+[[MultipartPayloadProvider]]
+
+The above class is annotated with @Provider, this declares that the class is of interest to the JAX-RS runtime.

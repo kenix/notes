@@ -1,0 +1,71 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-11-05T07:31:15+01:00
+
+====== references ======
+Created Thursday 05 November 2015
+EJB3 JPA: Dealing with Date, Time and Timestamp
+
+Method 1: Data Type Representation Using java.sql.Date, java.sql.Time and java.sql.Timestamp
+
+@Column(name = "DATE_FIELD")
+private java.sql.Date dateField;
+	
+@Column(name = "TIME_FIELD")
+private java.sql.Time timeField;
+
+@Column(name = "DATETIME_FIELD")
+private java.sql.Timestamp dateTimeField;
+	
+@Column(name = "TIMESTAMP_FIELD")
+private java.sql.Timestamp timestampField;
+
+When Should You Use Method 1?
+
+If your application only requires to store date and time values, without the need to store extended detail of dates and time like server GMT offset or storing different date and time in different region or time zone, this method is sufficient for most.
+
+Method 2: Date, Time and Timestamp Representation Using java.util.Date
+
+@Temporal(TemporalType.DATE)
+@Column(name = "DATE_FIELD")
+private java.util.Date dateField;
+	
+@Temporal(TemporalType.TIME)
+@Column(name = "TIME_FIELD")
+private java.util.Date timeField;
+	
+@Temporal(TemporalType.TIMESTAMP)
+@Column(name = "DATETIME_FIELD")
+private java.util.Date dateTimeField;
+	
+@Temporal(TemporalType.TIMESTAMP)
+@Column(name = "TIMESTAMP_FIELD")
+private java.util.Date timestampField;
+
+When Should You Use Method 2?
+
+Referring to the above stated behavior, use Method 2 when you need to store the server/application’s date and GMT values with the date, time or timestamp field, if that it is necessary.
+
+Method 3: Date, Time and Timestamp Representation Using java.util.Calendar
+
+@Column(name = "DATE_FIELD")
+@Temporal(TemporalType.DATE)
+private java.util.Calendar dateField;
+	
+@Column(name = "TIME_FIELD")
+@Temporal(TemporalType.TIME)
+private java.util.Calendar timeField;
+	
+@Column(name = "DATETIME_FIELD")
+@Temporal(TemporalType.TIMESTAMP)
+private java.util.Calendar datetimeField;
+	
+@Column(name = "TIMESTAMP_FIELD")
+@Temporal(TemporalType.TIMESTAMP)
+private java.util.Calendar timestampField;
+
+When Should You Use Method 3?
+
+Method 3 is very suitable especially if you need to store date, time or datetime data with reference to different region, timezone or geographical details. The java.util.Calendar class is one of the most flexible and highly powerful class to capture dates and time with lots of manipulations.
+
+Therefore, if you are developing application which requires international date and time information capturing, java.util.Calendar class as the property field data type is the preferred choice.

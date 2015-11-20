@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-09-24T09:56:39+02:00
+
+====== session ======
+Created Thursday 24 September 2015
+
+Approach 1
+Just inject in HttpSession where it is required. Injected is a proxy which knows how to internally delegate to the right session for the request. This proxy also enables the integration of spring-session.
+@Service
+public class ShoppingCartService{
+	@Autowired
+	private HttpSession httpSession
+}
+Approach 2
+Accept it as a parameter
+@Controller
+public class ShoppingCartController{
+	@RequestMapping("/addToCart")
+	public String addToCart(long productId, [[HttpSession]] httpSession){}
+}
+Approach 3
+Create a bean and scope it to the session
+@Component
+@Scope(proxyMode=ScopedProxyMode.TARGET_CLASS, value="session")
+public class [[ShoppingCart]] implements Seriablizable{}
+Approach 4
+Annotating Spring MVC model attributes with @SessionAttribute annotation:
+@SessionAttribute("shoppingCart")
+public class [[OrderFlowController]] {
+	public String step1(@ModelAttribute("shoppingCart") [[ShoppingCart]] shoppingCart){}
+}

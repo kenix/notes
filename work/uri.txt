@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-10-14T17:05:50+02:00
+
+====== uri ======
+Created Wednesday 14 October 2015
+
+http://localhost:8080/dmxml-1/iview/retrieve.json
+
+request=<?xml version="1.0" encoding="UTF-8"?>
+<request>
+  <authentication>mm-xml</authentication>
+  <authenticationType>resource</authenticationType>
+   <block key="BND_FinderMetadata">
+  </block>
+</request>
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8

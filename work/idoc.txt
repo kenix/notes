@@ -15,3 +15,23 @@ sync-docman-xml-repository-to-tomcat.sh .IDOC265
 2015-06-18_Schema_99c2087__53e7737_addClientSectionTextTable
 
 #log=true
+
+mysql -u username -p db_name < stat.sql | sed 's/\t/;/g' >IDOC_189_2015.csv
+
+if cannot read resources through thread.currentThread.contextClasssLoader, check project properties/paths/inherit project compile output path
+
+http://www.onemarkets.de/de/produkte/pdfs.html?document=PIB_HVB_DE000HU0K155.pdf
+DE000HU07D64
+
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+<key>1c29-5d29-3fe4-824a</key>
+  <authentication>365:120:dwp</authentication>
+  <authenticationType>vwd-ent:ByLogin</authenticationType>
+   <block key="DOC_Availability">
+<parameter key="variant" value="dwp_1046"/>
+	<parameter key="symbol" value="710000"/>
+  </block>
+</request>
+
+if using hash to jump around, not forget to prevent default href action setting hash in navigator's location

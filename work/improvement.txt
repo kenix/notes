@@ -6,3 +6,5 @@ Creation-Date: 2015-05-04T12:19:30+02:00
 Created Monday 04 May 2015
 
 v_istar_nets_certificates annotation update from MDP leads to JVM crash (OutOfMemory) of istar-provider because the protobuf-file has header (dictionary for cached strings) too big to fit into memory
+
+Google values GWT not because it's good front end framework, but because of its power to share the code across different platforms.

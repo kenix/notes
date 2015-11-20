@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-11-20T12:36:58+01:00
+
+====== boot ======
+Created Friday 20 November 2015
+
+gradle bootRun -Dspring.profiles.active=dev
+
+bootRun {
+	systemProperties System.properties
+}

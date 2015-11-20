@@ -40,3 +40,7 @@ void header(final String title) {
 	println title.center(length)
 	println '-' * length
 }
+
+grails run-app -debug-jvm -port=5005
+
+auto timestamp a domain only applicable through grails. If you want to update some child domains among many, you don't want to load all of them and then update some, then save. More efficient will be issue the update with HQL. But then the auto timestamp "lastUpdate" won't be set automatically.
