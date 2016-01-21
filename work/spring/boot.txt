@@ -10,3 +10,7 @@ gradle bootRun -Dspring.profiles.active=dev
 bootRun {
 	systemProperties System.properties
 }
+
+spring init --build=gradle -d=cloud-hystrix,cloud-hystrix-dashboard,actuator --format=build --force
+
+spring init --build=gradle -d=web demo

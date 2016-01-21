@@ -16,3 +16,6 @@ request=<?xml version="1.0" encoding="UTF-8"?>
 </request>
 
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+
+curl -i pinatubo:9090/priip/logout -XPOST -H 'JSESSIONID=707633F42A70BA5116ACDD8ACB774CA3'
+curl -i pinatubo:9090/priip/logout -XPOST

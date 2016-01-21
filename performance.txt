@@ -10,3 +10,19 @@ We are given a serial task which is split into four consecutive parts, whose per
 
 S_\text{latency} = \frac{1}{\frac{p1}{s1} + \frac{p2}{s2} + \frac{p3}{s3} + \frac{p4}{s4}} = \frac{1}{\frac{0.11}{1} + \frac{0.18}{5} + \frac{0.23}{20} + \frac{0.48}{1.6}} = 2.19.
 Notice how the 20 times and 5 times speedup on the 2nd and 3rd parts respectively don't have much effect on the overall speedup when the 4th part (48% of the execution time) is sped up only 1.6 times.
+
+Gustafson's law:
+Defining
+\alpha = a/(a+b)
+to be the sequential fraction of the parallel execution time, we have
+
+S(P)= \alpha + P\cdot(1-\alpha) = P - \alpha\cdot(P-1) .
+Thus, if \alpha is small, the speedup is approximately P, as desired. It may even be the case that \alpha diminishes as P (together with the problem size) increases; if that holds true, then S approaches P monotonically with the growth of P.
+
+A driving metaphor[edit]
+
+Amdahl's Law approximately suggests:
+Suppose a car is traveling between two cities 60 miles apart, and has already spent one hour traveling half the distance at 30 mph. No matter how fast you drive the last half, it is impossible to achieve 90 mph average before reaching the second city. Since it has already taken you 1 hour and you only have a distance of 60 miles total; going infinitely fast you would only achieve 60 mph.
+
+Gustafson's Law approximately states:
+Suppose a car has already been traveling for some time at less than 90mph. Given enough time and distance to travel, the car's average speed can always eventually reach 90mph, no matter how long or how slowly it has already traveled. For example, if the car spent one hour at 30 mph, it could achieve this by driving at 120 mph for two additional hours, or at 150 mph for an hour, and so on.

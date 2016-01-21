@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-12-02T15:54:41+01:00
+
+====== spock ======
+Created Wednesday 02 December 2015
+
+multiple when, then, when, then can be used
+to use spring value annotation use single quote

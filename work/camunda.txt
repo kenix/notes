@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2015-11-24T17:46:02+01:00
+
+====== camunda ======
+Created Tuesday 24 November 2015
+
+camunda rest uses [[ProcessEngineAuthenticationFilter]] to get and set current authenticated user for each request. No session bound authenticated user is used, REST style. Customized implementation of [[AuthenticationProvider]] can retrieve that user from session and use it instead.
+
+to use separate database schemas, set databaseSchema='my_schema' and databaseTablePrefix='my_schema.'
+because of bug: CAM-2097, also set databaseSchemaUpdate=none (which skips database checking completely)

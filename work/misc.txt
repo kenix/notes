@@ -25,3 +25,26 @@ $ git push -u origin feature_branch_name
 xdg-mime default wfica.desktop application/x-ica
 
 CTRL+ALT+F7 -> CTRL+ALT+F1
+
+# ---------------------------------------------------------------------
+# Locate a JDK installation directory which will be used to run the IDE.
+# Try (in order): IDEA_JDK, ../jre, JDK_HOME, JAVA_HOME, "java" in PATH.
+# ---------------------------------------------------------------------
+IDEA_JDK=/export/home/zzhao/apps/jdk1.8.0_40
+
+ [url "https://"]
+	  insteadOf = git://
+need git-daemon
+git clone git://pinatubo/config.git
+
+as of git 1.8.0+
+git clone --bare [[/path/to/repo]]
+git remote rm origin
+git remote add origin file:///home/zzhao/tmp/repo/priip
+git fetch
+git br -u origin/master
+git branch -u upstream/foo foo
+
+git tag
+git tag foo
+git tag -d foo

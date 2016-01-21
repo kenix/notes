@@ -32,3 +32,28 @@ lsof
 
 #To display all open IPv4 network files in use by the process whose PID is 9255, use:
 lsof -i 4 -a -p 9255
+
+tr is an UNIX utility for translating, or deleting, or squeezing repeated characters. It will read from STDIN and write to STDOUT.
+$ tr [OPTION] SET1 [SET2]
+If both the SET1 and SET2 are specified and ‘-d’ OPTION is not specified, then tr command will replace each characters in SET1 with each character in same position in SET2.
+$ tr [:lower:] [:upper:]
+$ echo "This is for testing" | tr [:space:] '\t'
+$ echo "This  is  for testing" | tr -s [:space:] ' '
+$ echo "the geek stuff" | tr -d 't'
+
+$ cut -c1-3 test.txt
+cut -d':' -f1-4,6,7
+paste file1.txt file2.txt > fileresults.txt
+join 1.txt 2.txt
+join -1 2 -2 2 1.txt 2.txt
+join -a1 -1 2 -2 2 1.txt 2.txt
+join -a1 -a2 -1 2 -2 2 1.txt 2.txt
+join -a1 -a2 -1 2 -2 2 -o 0 1.1 2.1 -e "0" 1.txt 2.txt
+
+As I know, we are able to perform column insert in vim in following steps:
+move to the position
+enter column visual mode CTRL+v
+select the column j or k
+enter into column insert mode shift+i
+insert the text
+type Esc
