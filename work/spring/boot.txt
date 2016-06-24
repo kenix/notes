@@ -14,3 +14,5 @@ bootRun {
 spring init --build=gradle -d=cloud-hystrix,cloud-hystrix-dashboard,actuator --format=build --force
 
 spring init --build=gradle -d=web demo
+
+spring boot log config: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html

@@ -5,6 +5,8 @@ Creation-Date: 2015-05-28T09:00:54+02:00
 ====== jpa ======
 Created Thursday 28 May 2015
 
+spring jpa auditing: annotations @CreatedDate etc. @EnableJpaAuditing and @EntityListeners(AuditingEntityListener.class)
+
 hibernate id generator 'select' with database trigger requires a key to select the id after insert:
 id generator: 'select', params: [key: 'name']
 

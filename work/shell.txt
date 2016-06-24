@@ -5,6 +5,9 @@ Creation-Date: 2015-04-29T11:56:32+02:00
 ====== shell ======
 Created Wednesday 29 April 2015
 
+ssh user@host  -t 'bash -l -c "ls;bash"'
+netstat -tulpn
+
 # redirect sout, serr to null
 >/dev/null 2>&1
 # redirect sout, serr to log file
@@ -49,6 +52,15 @@ join -1 2 -2 2 1.txt 2.txt
 join -a1 -1 2 -2 2 1.txt 2.txt
 join -a1 -a2 -1 2 -2 2 1.txt 2.txt
 join -a1 -a2 -1 2 -2 2 -o 0 1.1 2.1 -e "0" 1.txt 2.txt
+
+bash sum:
+seq 10 | xargs | sed -e 's/\ /+/g' | bc
+seq 10 | paste -s -d+ | bc
+
+factor 27417
+echo "1+2" | bc
+echo "1 2 + p" | dc
+// p: print the result
 
 As I know, we are able to perform column insert in vim in following steps:
 move to the position

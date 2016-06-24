@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-01-28T16:17:07+01:00
+
+====== test ======
+Created Thursday 28 January 2016
+
+gradle -Dtest.single=WfeControllerSpec test

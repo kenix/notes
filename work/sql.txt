@@ -2,9 +2,17 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2015-04-29T11:56:20+02:00
 
-====== sql ======
+====== mysql ======
 Created Wednesday 29 April 2015
 
 -----------
 alter table vendor_pib modify dmldate timestamp not null default current_timestamp on update current_timestamp;
 -----
+activating slow log to find mysql bottlenecks
+edit [[/etc/mysql/my.conf]] add:
+log_slow_queries    = /var/log/mysql/mysql-slow.log
+long_query_time = 1
+log-queries-not-using-indexes
+
+analyze slow log with "pt-query-digest"
+analyze mysql when problems occur: pt-stalk

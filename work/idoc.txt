@@ -5,8 +5,14 @@ Creation-Date: 2015-06-18T08:20:19+02:00
 ====== idoc ======
 Created Thursday 18 June 2015
 
+select k.* from active_instrument a join keysystem k on a.isin=k.symbol join data d on d.instrument_id=k.instrument_id where a.isin in ('DE000SE3JAP6')
+
+groovy Sampling.groovy /home/webadm/produktion/var/data/idoc/checkDir /home/webadm/tmp/idoc-samples 2014-12-01 2015-01-02 v-bank
+groovy Sampling.groovy /home/webadm/produktion/var/data/idoc/checkDir /home/webadm/tmp/idoc-samples 2015-06-01 2015-07-02 bhl
+groovy Sampling.groovy /home/webadm/produktion/var/data/idoc/checkDir /home/webadm/tmp/idoc-samples 2015-09-01 2015-10-01 dwp
+
 max venor erstegroup(12), deka(13)
-max client erstegroup(360)
+max client erstegroup(360) bpb 370
 
 insert into clients values ('docman-erstegroup', 390, 120, 1, 'EXCLUSIVE', 'vwd-ent:ByLogin', null, null, 9999, 'vwd document manager [PIB] - Portal', null, '', 206);
 
@@ -23,6 +29,11 @@ if cannot read resources through thread.currentThread.contextClasssLoader, check
 http://www.onemarkets.de/de/produkte/pdfs.html?document=PIB_HVB_DE000HU0K155.pdf
 DE000HU07D64
 
+vwdgroup
+<key>2c29-5d42-3fe4-804a</key>
+bhl
+<key>d90b-5a85-989b-3117</key>
+
 <?xml version="1.0" encoding="UTF-8"?>
 <request>
 <key>1c29-5d29-3fe4-824a</key>
@@ -35,3 +46,24 @@ DE000HU07D64
 </request>
 
 if using hash to jump around, not forget to prevent default href action setting hash in navigator's location
+
+select CAST(extractvalue(d.data,"item/data/field[@fname='PIB010']") AS CHAR(128) CHARACTER SET utf8) as Name,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB020']") AS CHAR(128) CHARACTER SET utf8) as WKN,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB030']") AS CHAR(128) CHARACTER SET utf8) as ISIN,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB040']") AS CHAR(128) CHARACTER SET utf8) as Issuer,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB390']") AS CHAR(128) CHARACTER SET utf8) as Produktgattung,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB380']") AS CHAR(128) CHARACTER SET utf8) as Finanzprodukt,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB120']") AS CHAR(128) CHARACTER SET utf8) as Waehrung,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB100']") AS CHAR(128) CHARACTER SET utf8) as Emissionsdatum
+from data d
+
+select * from (
+select CAST(extractvalue(d.data,"item/data/field[@fname='PIB010']") AS CHAR(128) CHARACTER SET utf8) as Name,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB020']") AS CHAR(128) CHARACTER SET utf8) as WKN,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB030']") AS CHAR(128) CHARACTER SET utf8) as ISIN,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB040']") AS CHAR(128) CHARACTER SET utf8) as Issuer,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB390']") AS CHAR(128) CHARACTER SET utf8) as Produktgattung,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB380']") AS CHAR(128) CHARACTER SET utf8) as Finanzprodukt,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB120']") AS CHAR(128) CHARACTER SET utf8) as Waehrung,
+	CAST(extractvalue(d.data,"item/data/field[@fname='PIB100']") AS CHAR(128) CHARACTER SET utf8) as Emissionsdatum
+from data d ) x where Issuer like 'Soc%'

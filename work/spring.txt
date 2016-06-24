@@ -6,3 +6,7 @@ Creation-Date: 2015-09-24T09:55:59+02:00
 Created Thursday 24 September 2015
 
 gradle -Dspring.profiles.active=dev clean bootRun
+
+[[ClassUtils]]
+[[ReflectionUtils]]
+WebUtils

@@ -11,7 +11,25 @@ RequestCacheFilter
 SessionManagementFilter
 SecurityContextHolder
 SecurityContextPersistenceFilter
-HttpSessionSecurityContextRepository
+[[HttpSessionSecurityContextRepository]]
+
+[[/users/{user}]] [[AntPathMatcher]] java doc
+
+1) [[AuthenticationManagerBuilder]] to [[UserDetailService]] (with PasswordEncoder)
+2) [[UserCache]] on [[AbstractUserDetailsAuthenticationProvider]]
+3) [[WebAuthenticationDetails]] is a map like container
+4) org.springframework.security.core.userdetails.User has 4 flags indicating account and password status
+	4.1) [[DefaultPreAuthenticationChecks]] tests on 3 flags
+	4.2) [[DefaultPostAuthenticationChecks]] tests on 1 flag - if credentials have expired
+5) [[AuthenticationEventPublisher]] publishes the authentication result (e.g. UsernamePasswordAuthenticationToken) (AbstractAuthenticationProcessingFilter)
+6) [[SavedRequestAwareAuthenticationSuccessHandler]] does the redirect after successful authentication (default to saved request)
+7) SessionAuthenticationStrategy: enable things like session-fixation attack prevention or to control the number of simultaneous sessions a principal may have.
+8) [[AccountStatusException]]
+9)@EventListener
+	public void authenticationFailed(AuthenticationFailureBadCredentialsEvent event)
+
+
+[[ThreadLocalSecurityContextHolderStrategy]] getContext returns existing or an empty context. Read java DOC!!!
 
 <!DOCTYPE html>
 <html>

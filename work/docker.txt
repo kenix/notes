@@ -33,6 +33,6 @@ docker ps -a | grep vwdkl | cut -d' ' -f1 | xargs sudo docker rm
 # attach to a running container
 docker exec -it [container-id or name] bash
 
-docker run --name website -p 9000:80 -p 9430:430 -v /export/home/zzhao/web/server/htdocs:/usr/share/nginx/html -d nginx
+docker run --name website -p 9000:80 -p 9443:443 -v /export/home/zzhao/web/server/htdocs:/usr/share/nginx/html -d nginx
 
 docker run -it --link my-redis:redis --rm redis sh -c 'exec redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'

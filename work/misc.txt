@@ -5,6 +5,8 @@ Creation-Date: 2015-04-29T11:57:48+02:00
 ====== misc ======
 Created Wednesday 29 April 2015
 
+ab -n 10000 -c 4 http://localhost:10101/hello
+pcurl -XPOST -H "Content-Type:application/json" -d '{"blah":false}' localhost:10101/edg-risk/fx-warrant
 0d60f635850a91dedbdf45442301a64d
 
 10.28.5.127
@@ -36,7 +38,7 @@ IDEA_JDK=/export/home/zzhao/apps/jdk1.8.0_40
 	  insteadOf = git://
 need git-daemon
 git clone git://pinatubo/config.git
-
+git init --bare
 as of git 1.8.0+
 git clone --bare [[/path/to/repo]]
 git remote rm origin
@@ -44,6 +46,8 @@ git remote add origin file:///home/zzhao/tmp/repo/priip
 git fetch
 git br -u origin/master
 git branch -u upstream/foo foo
+
+git push -u <remote-name> <local-branch-name> // create remote branch for push and pull
 
 git tag
 git tag foo
