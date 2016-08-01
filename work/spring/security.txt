@@ -7,6 +7,7 @@ Created Thursday 24 September 2015
 
 let out login() config and add [[UsernamePasswordAuthenticationFilter]] bean to enable formless login, add logout config, configure them to use http status success handler for rest-style login and logout
 
+SecurityExpressionRoot
 RequestCacheFilter
 SessionManagementFilter
 SecurityContextHolder
