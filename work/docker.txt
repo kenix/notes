@@ -7,7 +7,7 @@ Created Wednesday 29 April 2015
 
 docker build -t kenix/comm_tcp:v0.0.1 .
 docker run --publish 6789:6789 --name tcpcomm --rm -it -v ~/prod/var/log:/root/prod/var/log kenix/comm_tcp:v0.0.1
-
+sudo service docker start //docker daemon
 # backup
 docker run --rm --volume-from mongodata -v $(pwd):/backup busybox tar cvf /backup/backup.tar /data/db
 # restore
