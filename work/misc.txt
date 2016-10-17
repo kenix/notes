@@ -5,10 +5,23 @@ Creation-Date: 2015-04-29T11:57:48+02:00
 ====== misc ======
 Created Wednesday 29 April 2015
 
+zoom PMI 422-866-5076
+
+--ponythreads=4 --ponynoyield=false
+
+rename vwdgroup 'demo' vwdgroup*
+
 ab -n 10000 -c 4 http://localhost:10101/hello
 pcurl -XPOST -H "Content-Type:application/json" -d '{"blah":false}' localhost:10101/edg-risk/fx-warrant
 0d60f635850a91dedbdf45442301a64d
+
 cat app.pid | xargs kill
+
+dd if=/dev/zero of=yourfilename.test bs=52428800 count=1
+ping -M do -s 2000 pinatubo
+
+vpn0's MTU plus overhead must not bigger than the MTU of the underlying network-interface. If necessary use set-mtu.sh script to reduce vpn's MTU size.
+
 10.28.5.127
 192.168.99.100
 
