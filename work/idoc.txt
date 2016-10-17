@@ -12,7 +12,7 @@ groovy Sampling.groovy /home/webadm/produktion/var/data/idoc/checkDir /home/weba
 groovy Sampling.groovy /home/webadm/produktion/var/data/idoc/checkDir /home/webadm/tmp/idoc-samples 2015-09-01 2015-10-01 dwp
 
 max venor erstegroup(12), deka(13)
-max client erstegroup(360) bpb 370
+max client bpb 370, dz 380
 
 insert into clients values ('docman-erstegroup', 390, 120, 1, 'EXCLUSIVE', 'vwd-ent:ByLogin', null, null, 9999, 'vwd document manager [PIB] - Portal', null, '', 206);
 
