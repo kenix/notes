@@ -36,3 +36,16 @@ docker exec -it [container-id or name] bash
 docker run --name website -p 9000:80 -p 9443:443 -v /export/home/zzhao/web/server/htdocs:/usr/share/nginx/html -d nginx
 
 docker run -it --link my-redis:redis --rm redis sh -c 'exec redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'
+
+If you are in docker toolbox try the docker client from terminal and then make the configs:
+
+docker-machine ssh
+sudo sysctl -w vm.max_map_count=262144
+exit
+On docker for mac:
+The vm_max_map_count setting must be set within the xhyve virtual machine:
+
+$ screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+Log in with root and no password. Then configure the sysctl setting as you would for Linux:
+
+sysctl -w vm.max_map_count=262144
