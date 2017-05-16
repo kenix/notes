@@ -23,6 +23,49 @@ tar -c sample/ | docker run -i --rm -w /test/data --volumes-from testdata busybo
 docker run -v $(pwd):/src/main ponylang/ponyc ./main
 
 -------------------------------------
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=dba
+    ports:
+      - "3306:3306"
+    networks:
+      - db
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 128M
+        reservations:
+          cpus: '0.001'
+          memory: 32M
+
+volumes:
+  mysql:
+    external: true
+
+networks:
+  db:
+    external: true
+    
+rabbitmq:
+  image: rabbitmq:3-management
+  expose:
+    - 5672
+  ports:
+    - 5672:5672
+    - 15672:15672
+
 docker create -v /var/lib/mysql busybox true
 docker run --rm --volumes-from mysql -v /export/home/zzhao/docker/backup:/backup busybox tar -cvf /backup/mysql.tar
 
