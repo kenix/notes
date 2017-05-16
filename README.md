@@ -1,2 +1,2 @@
 # notes
-Notes, originally for Zim
+Notes, for Zim
