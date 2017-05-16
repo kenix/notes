@@ -8,7 +8,7 @@ Created Wednesday 29 April 2015
 ab -n 10000 -c 4 http://localhost:10101/hello
 pcurl -XPOST -H "Content-Type:application/json" -d '{"blah":false}' localhost:10101/edg-risk/fx-warrant
 0d60f635850a91dedbdf45442301a64d
-
+cat app.pid | xargs kill
 10.28.5.127
 192.168.99.100
 

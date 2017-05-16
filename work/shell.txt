@@ -7,6 +7,11 @@ Created Wednesday 29 April 2015
 
 ssh user@host  -t 'bash -l -c "ls;bash"'
 netstat -tulpn
+netstat -antup
+netstat -anup
+
+set org.gnome.desktop.wm.keybindings panel-main-menu "[]" # disable Alt+F1
+find . -type f -name '*.java' -exec sed -i 's/\(.*\)org\.jdom\(.*\)/\1org\.jdom2\2/g' {} \;
 
 # redirect sout, serr to null
 >/dev/null 2>&1
