@@ -22,6 +22,8 @@ ping -M do -s 2000 pinatubo
 
 vpn0's MTU plus overhead must not bigger than the MTU of the underlying network-interface. If necessary use set-mtu.sh script to reduce vpn's MTU size.
 
+cat app.pid | xargs kill
+
 10.28.5.127
 192.168.99.100
 
