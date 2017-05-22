@@ -67,3 +67,33 @@ git push -u <remote-name> <local-branch-name> // create remote branch for push a
 git tag
 git tag foo
 git tag -d foo
+
+Git global setup
+
+git config --global user.name "Mike Zhao"
+git config --global user.email "zzhao@vwd.com"
+
+Create a new repository
+
+git clone http://kenix@ee9591690eac/kenix/awsome.git
+cd awsome
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Existing folder
+
+cd existing_folder
+git init
+git remote add origin http://kenix@ee9591690eac/kenix/awsome.git
+git add .
+git commit
+git push -u origin master
+
+Existing Git repository
+
+cd existing_repo
+git remote add origin http://kenix@ee9591690eac/kenix/awsome.git
+git push -u origin --all
+git push -u origin --tags

@@ -7,6 +7,8 @@ Created Thursday 24 September 2015
 
 In [[SpringSecurity's]] expression based access control 'hasPermission' is finest mechanism to regulate access. See also PermissionEvaluator.
 
+haveged
+
 let out login() config and add [[UsernamePasswordAuthenticationFilter]] bean to enable formless login, add logout config, configure them to use http status success handler for rest-style login and logout
 
 SecurityExpressionRoot
