@@ -20,7 +20,7 @@ jvm-mon
 ./jdk8/bin/java -XX:+PrintGCDetails -XX:+Verbose \
   -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -version
 
-"-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n"
+"-agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n"
 
 -server
 	-Xms<heap size>[g|m|k] -Xmx<heap size>[g|m|k]
