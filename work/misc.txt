@@ -5,6 +5,154 @@ Creation-Date: 2015-04-29T11:57:48+02:00
 ====== misc ======
 Created Wednesday 29 April 2015
 
+<key>9c92-5a49-3fe4-804d</key>
+
+SPRING_PROFILES_ACTIVE=dev SPRING_H2_CONSOLE_ENABLED=false ENDPOINT_IDOC_URL=http://pinatubo:8080 ../gradlew clean bootRun --debug-jvm
+SPRING_PROFILES_ACTIVE=dev gradlew clean bootRun --debug-jvm
+SPRING_PROFILES_ACTIVE=dev ../gradlew clean bootRun
+SPRING_PROFILES_ACTIVE=dev ENDPOINT_IDOC_URL=http://pinatubo:8080 ../gradlew clean bootRun
+SPRING_PROFILES_ACTIVE=int ENDPOINT_IDOC_URL=http://hades1:8080 ENDPOINT_IDOC_APPNAME=tm-docman-xml-1 ../gradlew clean bootRun
+
+-Xms64m -Xmx256m
+shopt -s extglob
+
+docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
+
+https://docman-test.vwd.com/jenkins/bitbucket-scmsource-hook/notify
+vm:172.19.234.145
+Bitbucket: vwd-jenkins/copra-joel-granny  (E-Mail Adresse zum Login: vwd-jenkins@aixcept.de
+
+docker commit sales-priip-server bug-priip
+
+tar cz jenkins2 | nc -i 10 -l -p 7878
+nc -w 10 localhost 7878 > jenkins2.data.tar.gz with tunnel
+
+https://github.com/gradle/gradle/issues/851
+
+ssh meadm@priip1.df1.vwd-df.net 'cd produktion/var/data && tar cz jenkins2' > jenkins.tar.gz
+
+priip1.df1.vwd-df.net
+priip2.df1.vwd-df.net
+
+validate_password_length       = 5
+validate_password_policy       = 0
+
+git tag -d TagName && git push origin :refs/tags/TagName
+zip -r ~/tmp/istar-domain.zip de/marketmaker/istar/istar-domain
+
+java -jar ./target/raml-to-jaxrs-cli-2.1.0-jar-with-dependencies.jar -d tmp -r foo.bar ~/dev/tm-idoc/doc/vwd_reg_hub.raml
+raml2html vwd_reg_hub.raml > vwd_reg_hub.html & rsync -avP vwd_reg_hub.html webadm@hades:produktion/prog/htdocs-docman/
+
+0004001:0004000:0000001
+https://docman.vwd.com//docman-xml-1/doc/olb/LU0048578792.pdf?reportType=Accounts
+
+select table_name as `table`, round((data_length+index_length)/1024/1024/1024,2) `G` from information_schema.tables where table_schema='idoc' order by (data_length+index_length);
+
+rsync -avP PIB630-50.XML meadm@dz-docman1:/home/meadm/produktion/var/data/idoc-vendor-data/wm-data
+
+CORE-13385
+
+gradle wrapper --gradle-version 3.5
+
+git clone --mirror https://zzhao@scm/git/itemp.git
+git remote add bb https://dobedo101@bitbucket.org/vauwede/itemp.git
+git push -f --tags bb refs/heads/*:refs/heads/*
+
+git branch --set-upstream-to=origin/master master
+git branch --set-upstream-to=origin/dev dev
+
+git merge --no-commit --no-ff $BRANCH
+git merge --abort
+
+gradle -b release.gradle releaseMinorVersionAsRC -Djavax.net.ssl.trustStore=/home/zzhao/apps/cacerts
+SPRING_PROFILES_ACTIVE=int java -Xms128m -Xmx256m -jar release-test-0.1.14-SNAPSHOT.jar
+
+http://localhost:9090/priip/hystrix.stream
+
+ssh -L 9091:localhost:9091 webadm@hades2
+ssh -4 -L 9001:localhost:6001 webadm@hades1
+
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+<key>d320-cbbe-c551-61fd</key>
+  <authentication>325:120:juliusbaer</authentication>
+  <authenticationType>vwd-ent:ByLogin</authenticationType>
+   <block key="DOC_REG_URL">
+	<parameter key="symbol" value="710000"/>
+	<parameter key="language" value="de"/>
+	<parameter key="country" value="DE"/>
+	<parameter key="adhocData">
+	<item key="adhoc_cost_model">cost_model_all_in</item>
+	</parameter>
+  </block>
+</request>
+
+<key>dc29-cd42-bfe4-a04a</key>
+  <authentication>390:120:pib-demo</authentication>
+
+  ?key=2c29-5d42-3fe4-804a&authentication=390:120:pib-demo&authenticationType=vwd-ent:ByLogin
+
+  -Djavax.net.debug=SSL
+"com.rabbitmq:amqp-client:3.5.6"
+
+  Although it is not always required to bring all jars in projects in sync with latest releases, it is nevertheless helpful to have an overview about the versions in production use.
+
+The report should have:
+1) versions in use
+2) versions of latest release
+3) if different, show a warning
+
+Important candidates with priority:
+0) jdk, groovy sdk
+1) own libs: istar, itools, amqp, idoc etc..
+2) logging, spring-*
+3) third-party libs: joda-time etc..
+
+DE000DG4VZJ4 (Template 1)
+
+DE000DG4WAG1 (Template 1)
+
+DE000DG4WAW8 (Template 1)
+
+DE000DG4ZM56 (Template 3)
+
+http://www.sg-zertifikate.de/app/pib/zugriff_bankhaus_lampe/DE000SG77Z27?percent=1%2C2&costs=300
+
+		final String processInstanceId = (String) message.getMessageProperties()
+				.getHeaders().get(MSG_KEY_SOURCE_PID);
+		final List<Long> templateReleaseIds =
+				(List<Long>) this.messageConverter.fromMessage(message);
+
+		// TODO: @Markus create generation job with help of process instance id and template
+		// TODO: release ids. Notifiy the result using method: notifyDocGenerationResult
+
+mysql, h2
+Runtime:
+alter table ACT_RU_EXECUTION add constraint ACT_UNIQ_RU_BUS_KEY UNIQUE (PROC_DEF_ID_, BUSINESS_KEY_);
+
+History:
+alter table ACT_HI_PROCINST add constraint ACT_UNIQ_HI_BUS_KEY UNIQUE (PROC_DEF_ID_, BUSINESS_KEY_);
+
+Runtime:
+alter table ACT_RU_EXECUTION add constraint ACT_UNIQ_RU_BUS_KEY unique(PROC_DEF_ID_, BUSINESS_KEY_);
+
+History:
+alter table ACT_HI_PROCINST add constraint ACT_UNIQ_HI_BUS_KEY unique(PROC_DEF_ID_, BUSINESS_KEY_);
+
+<bpmn:callActivity id="CallActivity_edit_temp" name="edit templates" calledElement="${editTemplateProcess}" camunda:calledElementTenantId="${execution.tenantId}">
+	  <bpmn:extensionElements>
+		<camunda:in businessKey="#{execution.processBusinessKey}" />
+		<camunda:executionListener expression="${bpmExecutionSupport.notEmpty(execution,&#39;templateIds&#39;)}" event="start" />
+		<camunda:in source="productGroup" target="productGroup" />
+		<camunda:in source="templateId" target="templateId" />
+		<camunda:in source="requestReason" target="requestReason" />
+	  </bpmn:extensionElements>
+	  <bpmn:incoming>SequenceFlow_16hu2dx</bpmn:incoming>
+	  <bpmn:incoming>SequenceFlow_0ldz4xx</bpmn:incoming>
+	  <bpmn:outgoing>SequenceFlow_1tzkgtc</bpmn:outgoing>
+	  <bpmn:multiInstanceLoopCharacteristics camunda:collection="templateIds" camunda:elementVariable="templateId" />
+	</bpmn:callActivity>
+
 zoom PMI 422-866-5076
 
 --ponythreads=4 --ponynoyield=false
